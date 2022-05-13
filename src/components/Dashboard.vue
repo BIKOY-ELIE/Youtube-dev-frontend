@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="grid grid-cols-12">
-      <div class="col-span-3 min-h-screen">
+      <div class="col-span-2 min-h-screen">
             <Aside></Aside>
       </div>
-      <div class="main col-span-9">
+      <div class="main col-span-10">
         <AppBar></AppBar>
         <Main></Main>
       </div>

@@ -1,12 +1,12 @@
 <template>
   <div class="grid grid-cols-12 justify-items-center gap-x-2 mt-4">
-    <div class="col-span-10 mx-5">
-      <Form></Form>
+    <div class="col-span-9 mx-5">
+      <FormSearch></FormSearch>
       <div class="pl-10 py-10">
         <h2 class="text-xl font-bold mb-1">Member</h2>
         <div class="w-full relative">
-          <button class="bg">
-            <img src="/images/bg-member.png" alt="" srcset="" />
+          <button class="bg h-fit w-full">
+            <img src="/images/bg-member.png" class="w-full"/>
           </button>
           <div class="absolute top-24 left-10">
             <button class="">
@@ -105,11 +105,15 @@
         <router-view></router-view>
       </div>
     </div>
-    <div class="col-span-2">
+    <div class="col-span-3">
       <IconsProfil></IconsProfil>
       <div class="flex flex-col gap-4 mt-10">
         <div class="rounded-xl border-2 p-4">
           <Statistics :stats="stats"></Statistics>
+        </div>
+        <div class="rounded-xl border-2 p-4 mb-5 relative">
+          <AdditonalDetails :user="user"></AdditonalDetails>
+          <Edit></Edit>
         </div>
       </div>
     </div>
@@ -118,10 +122,11 @@
 
 <script>
 import IconsProfil from "./layout/IconsProfil.vue";
-import Form from "./layout/Form.vue";
+import FormSearch from "./layout/FormSearch.vue";
 import RouterLink from './layout/RouterLink.vue'
 import Edit from './layout/user-dashboard/Edit.vue'
 import Statistics from './layout/user-dashboard/Statistics.vue'
+import AdditonalDetails from './layout/user-dashboard/AdditonalDetails.vue'
 
 
 const stats = [
@@ -152,10 +157,11 @@ const col = ListOfLinks.length
 export default {
   components: {
     IconsProfil,
-    Form,
+    FormSearch,
     RouterLink,
     Edit,
     Statistics,
+    AdditonalDetails,
   },
   setup() {
     return {

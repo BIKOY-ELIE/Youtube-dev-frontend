@@ -1,4 +1,7 @@
-import {createRouter, createWebHistory} from "vue-router"
+import {
+	createRouter,
+	createWebHistory
+} from "vue-router"
 import Chat from "../components/layout/dashboard/children/Chat.vue"
 import Links from "../components/layout/dashboard/children/Links.vue"
 import Testimonies from "../components/layout/dashboard/children/Testimonies.vue"
@@ -9,23 +12,22 @@ import Syllabus from "../components/layout/user-dashboard/children/Syllabus.vue"
 import Events from "../components/layout/user-dashboard/children/Events.vue"
 import More from "../components/layout/user-dashboard/children/More.vue"
 import Dashboard from "../components/Dashboard.vue"
+import Register from "../components/Register.vue"
+import Login from "../components/Login.vue"
 import UserDashboard from "../components/UserDashboard.vue"
 import Home from "../components/Home.vue"
 import store from "../store/index"
 
 
-const routes = [
-	{
+const routes = [{
 		path: "/",
 		name: 'Home',
 		component: Home,
-		children: [
-			{
+		children: [{
 				path: "/dashboard",
 				component: Dashboard,
 				name: "Dashboard",
-				children: [
-					{
+				children: [{
 						path: "/dashboard/presentation",
 						name: "Presentation",
 						component: Presentation,
@@ -51,8 +53,7 @@ const routes = [
 				path: "/user-dashboard",
 				component: UserDashboard,
 				name: "UserDashboard",
-				children: [
-					{
+				children: [{
 						path: "/dashboard/overview",
 						name: "Overview",
 						component: Overview,
@@ -81,7 +82,17 @@ const routes = [
 			},
 		]
 	},
-	
+	{
+		path: "/register",
+		name: "Register",
+		component: Register,
+	},
+	{
+		path: "/login",
+		name: "Login",
+		component: Login,
+	}
+
 ]
 
 
